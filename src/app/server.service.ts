@@ -1,0 +1,13 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ServerService {
+
+  constructor() { }
+
+  getName() {
+    return "Server 12.01";
+  }
+}
