@@ -1,0 +1,20 @@
+div.card {
+    overflow: hidden;
+}
+div.messages {
+    min-height: 300px;
+    height: 40vh;
+    overflow: auto;
+    table {
+        tr.message {
+            height: min-content;
+            td {
+                padding-inline: 5px;
+                &.type {
+                    text-align: center;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

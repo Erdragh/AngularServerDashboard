@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="messages card-body bg-dark text-light" #messagesDiv>
+        <table>
+            <tr
+                class="message"
+                *ngFor="let message of messages"
+            >
+                <td class="timestamp text-muted">
+                    {{ message.getTimestamp().toLocaleTimeString() }}
+                </td>
+                <td 
+                    class="type"
+                    [ngClass]="{
+                        'text-danger': message.ofKind('error'),
+                        'text-success': message.ofKind('success'),
+                        'text-warning': message.ofKind('warning')
+                    }"
+                >
+                    {{ message.getKind() }}
+                </td>
+                <td 
+                    class="message"
+                    [ngClass]="{
+                        'text-danger': message.ofKind('error'),
+                        'text-success': message.ofKind('success'),
+                        'text-warning': message.ofKind('warning')
+                    }"
+                >
+                    {{ message.getMessage() }}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <form 
+        [formGroup]="terminalForm" 
+        (ngSubmit)="onSubmit()"
+        autocomplete="off"
+        class="form-outline form-white card-footer bg-secondary"
+    >
+        <input
+            class="w-100 form-control"
+            type="text"
+            name="command"
+            id="command"
+            formControlName="textInput"
+        >
+    </form>
+</div>

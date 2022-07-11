@@ -1,0 +1,20 @@
+<div class="graph bg-dark p-1 text-light rounded">
+    <div class="steps">
+        <div
+            class="step rounded-top m-1 mt-auto bg-gradient"
+            *ngFor="let step of steps"
+            [ngStyle]="{
+                height: step + '%'
+            }"
+            [ngClass]="{
+                'bg-danger': step > 90,
+                'bg-warning': step > 75,
+                'bg-success': step > 0
+            }"
+        >
+            <div class="info shadow rounded border bg-light text-dark p-1">
+                {{ getReadable(step)}}
+            </div>
+        </div>
+    </div>
+</div>

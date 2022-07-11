@@ -1,0 +1,30 @@
+div.graph {
+    height: 200px;
+    div.steps {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        transition-duration: .5s;
+        position: relative;
+        div.step {
+            transition-duration: .5s;
+            flex: 1 0 auto;
+            text-align: center;
+            div.info {
+                position: absolute;
+                display: inline-block;
+                opacity: 0;
+                bottom: 0;
+                text-align: center;
+                transition-duration: .2s;
+                pointer-events: none;
+                z-index: 1;
+            }
+            &:hover {
+                div.info {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
